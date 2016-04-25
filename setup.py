@@ -3,8 +3,8 @@ import os
 from kik import KikApi
 import requests, base64
 
-BOT_USERNAME = os.environ.get('MUSIK_USERNAME')
-BOT_API_KEY = os.environ.get('MUSIK_API_KEY')
+BOT_USERNAME = os.environ.get('KIK_BOT_USERNAME')
+BOT_API_KEY = os.environ.get('KIK_API_KEY')
 token_response_json = None
 
 bot_config = {
