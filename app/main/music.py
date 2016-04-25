@@ -44,7 +44,7 @@ class Song:
 
 def get_song_from_playlist(ownerid='spotify'):
     playlistid = random.choice(PLAYLIST_IDS)
-    print "Getting song from playlist {0} owned by {1}".format(playlistid, ownerid)
+    print u"Getting song from playlist {0} owned by {1}".format(playlistid, ownerid)
     try:
         songs = SP.sp.user_playlist_tracks(ownerid, playlist_id=playlistid)['items']
         song = random.choice(songs)['track']

@@ -86,7 +86,7 @@ class Handler(object):
     @staticmethod
     def handle_fallback(to, game, body, response=None):
         if response:
-            response = 'I don\'t understand what you mean by "{}"'.format(response)
+            response = u'I don\'t understand what you mean by "{}"'.format(response)
         else:
             response = random.choice(StateString.FALLBACK_STRINGS)
 
@@ -143,12 +143,12 @@ class Handler(object):
 
             response = random.choice(StateString.CORRECT)
             response += ' ' + random.choice(StateString.CORRECT_EMOJI)
-            response += '\nIt\'s "{song}" by {artist}'.format(song=song['title'], artist=song['artist'])
+            response += u'\nIt\'s "{song}" by {artist}'.format(song=song['title'], artist=song['artist'])
             keyboards = srs.grouped_srs[StateType.INITIAL]
             hidden_sr = False
         else:
             if body in ['back', 'skip', 'next']:
-                back_message = 'Giving up? The song was "{song}" by {artist}'.format(song=song['title'], artist=song['artist'])
+                back_message = u'Giving up? The song was "{song}" by {artist}'.format(song=song['title'], artist=song['artist'])
                 Handler.handle_back(to, game, body, back_message)
                 return
             elif body == 'hint':
