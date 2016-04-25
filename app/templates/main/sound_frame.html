@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title></title>
+		<script type="text/javascript" src="{{ url_for('static', filename='amplitude.min.js') }}"></script>
+		<!-- jQuery only used to help with animations and NON Amplitude elements -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"/>
+	</head>
+    <script type="text/javascript">
+		Amplitude.init({
+			"songs": [
+				{
+					"name": "Mystery Name",
+					"artist": "Mystery Artist",
+					"album": "Mystery Album",
+					"url": "{{preview_url}}",
+					"live": false,
+				}
+			],
+			"default_album_art": "{{ url_for('static', filename='no-cover.png') }}"
+		});
+	</script>
+	<body>
+			<div id="small-player-middle">
+                <div id="small-player-middle-controls">
+                    <div class="amplitude-play-pause amplitude-paused" amplitude-main-play-pause="true"></div>
+                </div>
+                <div id="current-time">
+                    <span class="amplitude-current-minutes" amplitude-single-current-minutes="true">0</span>:<span class="amplitude-current-seconds" amplitude-single-current-seconds="true">00</span>
+                </div>
+			</div>
+	</body>
+</html>
