@@ -40,7 +40,6 @@ def receive():
             Handler.handle_intro(to, game, None)
         elif isinstance(message, TextMessage):
             print 'type %r' % type(message.body)
-            print str(message.body)
             body = message.body.lower()
             if not body and mention and game.state == StateType.INITIAL:
                 Handler.handle_song(to, game, None, song=music.get_song_from_playlist())
@@ -57,8 +56,7 @@ def receive():
                     Handler.handle_song(to, game, body, song=music.get_song_from_genre(body, game.difficulty))
                 elif game.state == StateType.ARTIST_SELECT or game.state == StateType.INITIAL:
                     print 'type %r' % type(message.body)
-                    print str(message.body)
-                    print 'MATCHING ARTIST: {artist}'.format(artist=str(body))
+                    print u'MATCHING ARTIST: {artist}'.format(artist=body)
                     try:
                         song = music.get_song_from_artist(body, game.difficulty)
                     except Exception as e:
