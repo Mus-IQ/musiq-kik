@@ -13,8 +13,8 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHMEY_DATABASE_URI = 'postgres://' + os.environ.get('SONGIQ_DB_ADMIN') + ':' 
-    os.environ.get('SONGIQ_DB_PASS') + '@' + os.environ.get('SONGIQ_DB_HOST')
+    SQLALCHMEY_DATABASE_URI = 'postgres://' + os.environ.get('DB_ADMIN') + ':' 
+    os.environ.get('DB_PASS') + '@' + os.environ.get('DB_HOST')
     SQL_ALCHEMY_COMMIT_ON_TEARDOWN = True
 
 
