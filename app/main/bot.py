@@ -39,7 +39,7 @@ def receive():
         if isinstance(message, StartChattingMessage):
             Handler.handle_intro(to, game, None)
         elif isinstance(message, TextMessage):
-            body = message.body.lower().decode('utf-8')
+            body = message.body.lower()
             if not body and mention and game.state == StateType.INITIAL:
                 Handler.handle_song(to, game, None, song=music.get_song_from_playlist())
                 return Response(status=200)
