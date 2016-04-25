@@ -86,7 +86,7 @@ class Handler(object):
     @staticmethod
     def handle_fallback(to, game, body, response=None):
         if response:
-            response = u'I don\'t understand what you mean by "{}"'.format(response)
+            response = u'I don\'t understand what you mean by "{response}"'.format(response=response)
         else:
             response = random.choice(StateString.FALLBACK_STRINGS)
 

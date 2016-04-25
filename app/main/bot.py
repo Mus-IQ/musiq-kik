@@ -54,7 +54,7 @@ def receive():
                                 game.state == StateType.GENRE_SELECT or game.state == StateType.INITIAL):
                     Handler.handle_song(to, game, body, song=music.get_song_from_genre(body, game.difficulty))
                 elif game.state == StateType.ARTIST_SELECT or game.state == StateType.INITIAL:
-                    print u'MATCHING ARTIST: {}'.format(body)
+                    print u'MATCHING ARTIST: {artist}'.format(artist=body)
                     try:
                         song = music.get_song_from_artist(body, game.difficulty)
                     except Exception as e:
