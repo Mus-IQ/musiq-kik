@@ -13,7 +13,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
-/app/main/wubble.py
 build/
 develop-eggs/
 dist/
