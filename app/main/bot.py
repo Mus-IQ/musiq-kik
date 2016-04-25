@@ -1,3 +1,5 @@
+import logging
+
 import music
 from app.main import main
 from setup import kik
@@ -14,6 +16,7 @@ from app.xlib.states import StateType
 def before_request():
     print("refreshing spotify client from before request")
     music.refresh_spotify_client()
+
 
 @main.route('/receive', methods=['POST'])
 def receive():
@@ -56,7 +59,7 @@ def receive():
                     Handler.handle_song(to, game, body, song=music.get_song_from_genre(body, game.difficulty))
                 elif game.state == StateType.ARTIST_SELECT or game.state == StateType.INITIAL:
                     print 'type %r' % type(message.body)
-                    print u'MATCHING ARTIST: {artist}'.format(artist=body)
+                    logging.info(u'MATCHING ARTIST: {artist}'.format(artist=body))
                     try:
                         song = music.get_song_from_artist(body, game.difficulty)
                     except Exception as e:
