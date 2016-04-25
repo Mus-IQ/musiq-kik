@@ -40,6 +40,7 @@ def receive():
             Handler.handle_intro(to, game, None)
         elif isinstance(message, TextMessage):
             print 'type %r' % type(message.body)
+            print message.body
             body = message.body.lower().decode('cp1252')
             if not body and mention and game.state == StateType.INITIAL:
                 Handler.handle_song(to, game, None, song=music.get_song_from_playlist())
