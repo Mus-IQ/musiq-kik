@@ -5,7 +5,9 @@ __pycache__/
 
 .idea
 /musik
+/venv
 .DS_store
+venv/
 
 # C extensions
 *.so
