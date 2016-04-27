@@ -2,26 +2,30 @@ import json
 import random
 
 import spotipy
-import setup
+from ..lib import util
 
-preview_base_url="https://p.scdn.co/mp3-preview/"
+preview_base_url = "https://p.scdn.co/mp3-preview/"
 
 PLAYLIST_IDS = ['5FJXhjdILmRA2z5bvz4nzf', '4hOKQuZbraPDIfaGbM3lKI', '5nPXGgfCxfRpJHGRY4sovK', '5UFRIQ89nVPcVsrWjLyjqI', '445ES7sgFV8zJHebmbUW0L']
 
+
 class SP(object):
-    sp = spotipy.Spotify(auth=setup.get_spotify_token())
+    sp = spotipy.Spotify(auth=util.get_spotify_token())
+
 
 def refresh_spotify_client():
     
     # return same instance if not none or new instance with token
-    if(setup.is_cached_token_valid()):
+    if util.is_cached_token_valid():
         print("Called before request and found access token to be valid")
         return 
-    print("returning new client with auth token: ", setup.get_spotify_token())
-    SP.sp = spotipy.Spotify(auth=setup.get_spotify_token())
+    print("returning new client with auth token: ", util.get_spotify_token())
+    SP.sp = spotipy.Spotify(auth=util.get_spotify_token())
+
 
 def get_genres():
     return SP.sp.recommendation_genre_seeds()['genres']
+
 
 class Genre:
     GENRES = get_genres()

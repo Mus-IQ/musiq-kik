@@ -1,11 +1,11 @@
 import json
 import random
 
-from app.xlib.decorators import check_state
-from app.xlib.responder import Responder
-from app.xlib.sr_strings import srs
-from app.xlib.states import StateString
-from app.xlib.states import StateType
+from app.lib.decorators import check_state
+from app.lib.responder import Responder
+from app.lib.sr_strings import srs
+from app.lib.states import StateString
+from app.lib.states import StateType
 
 from app.lib import util
 from .. import db

@@ -5,6 +5,7 @@ import os
 KIKDATA = os.environ.get("KIKDATA")
 send_type = os.environ.get("KIK_SEND_TYPE")
 
+
 class WubbleMessage(KeyboardMessage, AttributableMessage):
   
     def __init__(self, to=None, chat_id=None, url=None, no_forward=None,
