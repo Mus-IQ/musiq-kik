@@ -2,7 +2,7 @@ import json
 import random
 
 import spotipy
-from ..lib import util
+from app.lib import util
 
 preview_base_url = "https://p.scdn.co/mp3-preview/"
 

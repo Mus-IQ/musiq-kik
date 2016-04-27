@@ -8,8 +8,8 @@ from app.lib.states import StateString
 from app.lib.states import StateType
 
 from app.lib import util
-from .. import db
-from ..main import music
+from app import db
+from app.main import music
 
 
 class Handler(object):
