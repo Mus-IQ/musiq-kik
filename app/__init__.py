@@ -1,11 +1,11 @@
-from flask import Flask
-
-from config import config
-
-from flask.ext.sqlalchemy import SQLAlchemy
 import os
+from flask import Flask
+from config import config
+from app.main import main as main_blueprint
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.register_blueprint(main_blueprint)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 
 db = SQLAlchemy(app)
@@ -13,8 +13,4 @@ db = SQLAlchemy(app)
 
 def create_app(config_name):
     app.config.from_object(config[config_name])
-
-    from app.main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
-
     return app

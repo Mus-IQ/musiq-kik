@@ -9,7 +9,7 @@ from app.lib.states import StateType
 from app.handlers.handler import Handler
 from app.main import main
 from app.model.game import Game
-import app.main.music as music
+from app.main import music
 from setup import kik
 
 
