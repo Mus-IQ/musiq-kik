@@ -1,12 +1,12 @@
 import logging
 
-from ..lib.sr_strings import srs
-from ..lib.states import StateType
 from flask import request, Response, render_template
 from kik.messages import messages_from_json, TextMessage, StartChattingMessage
 
 import music
 from app import db
+from app.lib.sr_strings import srs
+from app.lib.states import StateType
 from app.handlers.handler import Handler
 from app.main import main
 from app.model.game import Game
