@@ -1,14 +1,15 @@
+import json
 import random
 
-import util
+from app.xlib.decorators import check_state
 from app.xlib.responder import Responder
-from app.xlib.states import StateType
 from app.xlib.sr_strings import srs
 from app.xlib.states import StateString
-from ..main import music
+from app.xlib.states import StateType
+
+from app.lib import util
 from .. import db
-from ..decorators import check_state
-import json
+from ..main import music
 
 
 class Handler(object):

@@ -1,15 +1,16 @@
 import logging
 
-import music
-from app.main import main
-from setup import kik
-from flask import request, Response, render_template
-from kik.messages import messages_from_json, TextMessage, StartChattingMessage
-from app import db
-from app.handlers.handler import Handler
-from app.models import Game
 from app.xlib.sr_strings import srs
 from app.xlib.states import StateType
+from flask import request, Response, render_template
+from kik.messages import messages_from_json, TextMessage, StartChattingMessage
+
+import music
+from app import db
+from app.handlers.handler import Handler
+from app.main import main
+from app.model.game import Game
+from setup import kik
 
 
 @main.before_request
