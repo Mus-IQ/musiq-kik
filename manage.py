@@ -20,7 +20,7 @@ def hookMeBro():
             'Content-Type': 'application/json'
         },
         data=json.dumps({
-            "webhook": "https://songiq.herokuapp.com/receive",
+            "webhook": "https://musiq-dev.herokuapp.com/receive",
             "features": {
                 "manuallySendReadReceipts": False,
                 "receiveReadReceipts": False,
