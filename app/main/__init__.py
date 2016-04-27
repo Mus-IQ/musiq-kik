@@ -1,4 +1,3 @@
-from flask import Blueprint
+from app.main import music
 from app.main import bot
-
-main = Blueprint('main', __name__)
+from app.main import wubble

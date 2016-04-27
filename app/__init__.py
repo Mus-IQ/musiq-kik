@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from config import config
-from app.main import main as main_blueprint
+from app.main.bot import main as main_blueprint
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
