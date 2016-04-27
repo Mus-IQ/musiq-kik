@@ -1,13 +1,13 @@
 import json
 import random
 
-from app.lib.decorators import check_state
-from app.lib.responder import Responder
-from app.lib.sr_strings import srs
-from app.lib.states import StateString
-from app.lib.states import StateType
+from ..lib.decorators import check_state
+from ..lib.responder import Responder
+from ..lib.sr_strings import srs
+from ..lib.states import StateString
+from ..lib.states import StateType
 
-from app.lib import util
+from ..lib import util
 from .. import db
 from ..main import music
 

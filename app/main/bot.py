@@ -1,7 +1,7 @@
 import logging
 
-from app.lib.sr_strings import srs
-from app.lib.states import StateType
+from ..lib.sr_strings import srs
+from ..lib.states import StateType
 from flask import request, Response, render_template
 from kik.messages import messages_from_json, TextMessage, StartChattingMessage
 
